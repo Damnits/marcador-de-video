@@ -11,7 +11,7 @@ public class Video implements Serializable {
     String titulo;
     String link;
 
-    @OneToMany(mappedBy = "video")
+    @OneToMany(mappedBy = "video", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Marcacao> marcacaos;
 
     public Video() {
